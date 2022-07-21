@@ -10,9 +10,11 @@ https://github.com/romansj/BackendHwkVue
 Generated with Swagger, available:
 https://romansj.github.io/open_api_hwk/open_api/index.html
 
-### Coverage report
+### Test & coverage report
 Generated from full test suite run:
-https://romansj.github.io/open_api_hwk/coverage_report/index.html
+Test report: https://romansj.github.io/open_api_hwk/test/index.html
+Coverage: https://romansj.github.io/open_api_hwk/coverage_report/index.html
+
 
 <br>
 
