@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title th:remove="all">Template for HTML email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{classpath:static/styles/email.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<p>
+    Hello, <span
+        th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).NAME.name()}__}"></span>!
+</p>
+
+<p>
+    You have made a payment request on <b><span
+        th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).PAYMENT_DATE.name()}__}"/></b>
+</p>
+<div class="payment_details">
+    <div class="detail_item">
+        <span>Payee account: </span><span
+            th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).ACCOUNT_DESTINATION.name()}__}"/>
+    </div>
+
+    <div class="detail_item">
+        <span>Payee name: </span><span
+            th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).NAME_DESTINATION.name()}__}"/>
+    </div>
+
+    <div class="detail_item">
+        <span>Amount: </span><span
+            th:text="${#numbers.formatDecimal(__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).AMOUNT.name()}__, 1, 'DEFAULT', 2, 'DEFAULT')}"/>
+        <span th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).CURRENCY.name()}__}"/>
+    </div>
+</div>
+
+<div th:if="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).LINK_CONFIRM.name()}__}">
+    <p>If the request is correct, please confirm it within the next 2 minutes by clicking the link below</p>
+
+    <a th:target="_blank"
+       th:href="@{${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).LINK_CONFIRM.name()}__}}">Confirm
+        payment</a>
+</div>
+
+
+<p>If it is not correct, please ignore this email.</p>
+<p>If you did not make this request, please contact Customer Service.</p>
+
+<br>
+<p>
+    Best regards, <br/>
+    <em>The Homework Team</em>
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.payment_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail_item:first-child {
+    text-align: end;
+}
+
+a {
+    padding: 1rem;
+    background-color: aquamarine;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;;
+}

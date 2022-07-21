@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title th:remove="all">Template for HTML email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{classpath:static/styles/email.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<p>
+    Hello, <span
+        th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).NAME.name()}__}"></span>!
+</p>
+
+<p>
+    Your <b><span
+        th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).PAYMENT_DATE.name()}__}"/></b>
+    payment request has been successfully confirmed!
+</p>
+
+<div class="payment_details">
+    <div class="detail_item">
+        <span>Payee account: </span><span
+            th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).ACCOUNT_DESTINATION.name()}__}"/>
+    </div>
+
+    <div class="detail_item">
+        <span>Payee name: </span><span
+            th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).NAME_DESTINATION.name()}__}"/>
+    </div>
+
+    <div class="detail_item">
+        <span>Amount: </span><span
+            th:text="${#numbers.formatDecimal(__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).AMOUNT.name()}__, 1, 'DEFAULT', 2, 'DEFAULT')}"/>
+        <span th:text="${__${T(com.romansj.backend_hwk.notifications.email.templating.EmailProperty).CURRENCY.name()}__}"/>
+    </div>
+</div>
+
+
+<br>
+<p>
+    Best regards, <br/>
+    <em>The Homework Team</em>
+</p>
+
+</body>
+
+</html>

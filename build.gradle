@@ -1,0 +1,67 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.romansj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // region data and validation
+    implementation 'org.springframework:spring-web:5.3.22'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.hibernate:hibernate-validator:7.0.4.Final'
+    // endregion
+
+    // region email, templating
+    // using older version due to https://github.com/thymeleaf/thymeleaf/issues/816
+    implementation 'org.thymeleaf:thymeleaf:3.0.11.RELEASE'
+    implementation 'org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.1'
+    // endregion
+
+    // region observables, schedulers
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+    implementation 'junit:junit:4.13.1'
+    // endregion
+
+    // region testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // in-memory db for tests
+    testImplementation 'com.h2database:h2'
+    // endregion
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.postgresql:postgresql'
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+
+
+    // to enable LocalDate/-Time parsing to JSON
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+
+    // api documentation
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+
+
+    developmentOnly'org.springframework.boot:spring-boot-devtools'
+//    implementation 'org.apache.logging.log4j:log4j-core:2.18.0'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+//    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
