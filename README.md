@@ -6,6 +6,16 @@ Complementary API-consuming frontend Vue.js project:
 https://github.com/romansj/BackendHwkVue
 
 
+### General flow
+* Submit payment to API endpoint
+* Receive authorization email with link
+* Click link to authorize payment
+* Receive confirmation email
+
+
+### Security
+The app is not secure.
+
 ### API specs
 Generated with Swagger, available:
 https://romansj.github.io/open_api_hwk/open_api/index.html
@@ -35,6 +45,7 @@ Use following settings for ease of configuration (can be modified in `applicatio
 * password = `password`
 
 After installing, under Servers -> "PostgreSQL 14" create a database named "backend_hwk".  
+In IntelliJ IDEA, in Databases tool window, connect to your PostgreSQL database.  
 Tables will be created automatically when you launch the app.
 
 > *Can be replaced with in-memory config like test, see* `..src\test\resources\application.properties`
