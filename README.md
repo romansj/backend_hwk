@@ -11,9 +11,12 @@ Generated with Swagger, available:
 https://romansj.github.io/open_api_hwk/open_api/index.html
 
 ### Test & coverage report
-Generated from full test suite run:
-Test report: https://romansj.github.io/open_api_hwk/test/index.html
-Coverage: https://romansj.github.io/open_api_hwk/coverage_report/index.html
+Generated from full test suite run:  
+Test report: 
+https://romansj.github.io/open_api_hwk/test/index.html
+
+Coverage: 
+https://romansj.github.io/open_api_hwk/coverage_report/index.html
 
 
 <br>
